@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html style="background-color:whitesmoke;">
+	<head>
+		<title>Plan your Vacation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+		<!-- MDL -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> 
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		
+        <!-- Our Stylesheets -->
+		<link rel="stylesheet" href="CSS Files\Stylesheet (Plan a Vacation).css">
+		
+        <!-- Mapbox -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet'/>
+
+	</head>
+	<body>
+		<!-- Always shows a header, even in smaller screens. -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		  <header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			  
+			  <!-- Title -->
+			  <span class="mdl-layout-title">
+                <img src="Images\Getaway Bloom-Small.jpg" alt='The Logo' height="55px" style="margin-left: -20px;">
+                &nbsp; 
+                Plan your Vacation
+              </span>
+                
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+
+			  <!-- Navigation. We hide it in small screens. -->
+			  <nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="index.html">Home</a>
+				<a class="mdl-navigation__link" href="Planned Vacation List.html">Planned Vacations</a>
+			  </nav>
+			</div>
+		  </header>
+            
+		  <!-- Navigational Drawer -->
+		  <div style="background-color:rgb(63, 81, 181)" class="mdl-layout__drawer">
+			<span style="color: white;" class="mdl-layout-title"><b>Getaway Bloom</b></span>
+			<nav class="mdl-navigation" id="navItems">
+			  <a style="color: white;" class="mdl-navigation__link" href="index.html"><b>Home</b></a>
+			  <a style="color: white;" class="mdl-navigation__link" href="Planned Vacation List.html"><b>Planned Vacations</b></a>
+			</nav>
+		  </div>
+            
+		  <main class="mdl-layout__content">
+			<!-- Your content goes here -->
+			<div class="page-content" id="pageContent">
+				<!--   Creating grids  -->
+				<div class="mdl-grid"> 
+					
+                      <!-- Expandable Textfield -->
+					  <span style="vertical-align: top; margin-top: 23px; margin-right: 4px; margin-left: 7px; padding: 0px;">Search</span>
+					  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+						<label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+						  <i class="material-icons">search</i> 
+						</label>
+                          
+					  <div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" id="sample6" placeholder="Search for POIs">
+						<label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+					  </div>
+					  </div>
+                    
+					  <!-- Button Chips for POI --> 
+					  <span style="margin-top: 13px; margin-bottom: 20px;">
+                        <button type="button" class="mdl-chip">
+                            <span class="mdl-chip__text">Fuel Stations
+                                <i style="line-height: 30px; vertical-align: top;" class="material-icons">local_gas_station</i>  
+                            </span>
+                        </button> 
+                        <button type="button" class="mdl-chip">
+                            <span class="mdl-chip__text">Attractions
+                                <i style="line-height: 30px; vertical-align: top;" class="material-icons">attractions</i> 
+                            </span>
+                        </button>
+                        <button type="button" class="mdl-chip">
+                            <span class="mdl-chip__text">Hotels
+                                <i style="line-height: 30px; vertical-align: top;" class="material-icons">hotel</i> 
+                            </span>
+                        </button> 
+                        <button type="button" class="mdl-chip">
+                            <span class="mdl-chip__text">Restaurants
+                                <i style="line-height: 30px; vertical-align: top;" class="material-icons">restaurant</i> 
+                            </span>
+                        </button>
+                     </span>
+					
+					<!-- Map-->
+					<div id='map' style="margin-top: -12px;" class="mdl-cell mdl-cell--12-col-desktop">
+						<script>
+						  mapboxgl.accessToken = 'pk.eyJ1IjoiZGludXNoaXRoYXJ1c2hpa2EiLCJhIjoiY2t4MDYxejF1MTI0cDJ2bW52dGF5N2w1ZyJ9.sf5I55RE8VJzQbzIx2kdcw';
+						  const map = new mapboxgl.Map({
+                                container: 'map', // container ID
+                                style: 'mapbox://styles/mapbox/streets-v11', // style URL
+                                center: [-74.5, 40], // starting position [lng, lat]
+                                zoom: 1, // starting zoom
+                                cooperativeGestures: true
+						      });
+						  map.addControl(
+						  new mapboxgl.NavigationControl());
+						</script>
+                        
+						<button style="background-color : rgb(233, 30, 99) ;"class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+						  <i class="material-icons">add</i>
+						</button>
+					</div>
+					
+					<!-- Buttons for next, back and distance -->
+					<div class="mdl-cell mdl-cell--1-col">																		 
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="back()">Back</button>
+					</div>
+					<div id='tripLength' class="mdl-cell mdl-cell--10-col-desktop">	
+						Approximate Travel Distance:
+					</div>
+					<div class="mdl-cell mdl-cell--1-col">	
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="next" onclick="next()">Next</button>
+					</div>
+				</div>	
+			</div>
+			<!-- Your content ends here -->
+		  </main>
+		</div>
+		<script>
+			function back() {
+			  window.location.assign("Vehicle Selection.html")
+			}
+			function next() {
+			  window.location.assign("Vacation Summary.html")
+			}
+		</script>
+	</body>
+</html>
