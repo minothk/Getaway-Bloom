@@ -52,7 +52,7 @@ function list() {
   window.location.assign("Planned Vacation List.html")
 }
 function newVacation() {
-  window.location.assign("Splash Page.html")
+  window.location.assign("index.html")
 }
 
 // Callback for first location.
