@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Selection</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" sizes="196x196" href="Images/Getaway Bloom.png" />
+    
+    <!-- MDL -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> 
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		
+    <!-- Our Stylesheets -->
+		<link rel="stylesheet" href="CSS Files\Stylesheet (Vehicle Selection).css">
+    <link rel="stylesheet" href="CSS Files\Stylesheet (Plan a Vacation).css">
+
+    <!-- Mapbox -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet'/>
+		
+    <!-- Services and Config -->
+		<script src="https://eng1003.monash/libs/services.js"></script>
+		<script src="JS Files/config.js"></script>
+    
+
+
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+     <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+        
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a href="index.html"><img src="Images\Getaway Bloom-Small.jpg" alt='The Logo' height="55px" style="margin-left: -20px;"></a>
+            &nbsp; 
+            Select your vehicle
+          </span>
+            
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="index.html">Home</a>
+            <a class="mdl-navigation__link" href="Planned Vacation List.html">Planned Vacations</a>
+          </nav>
+        </div>
+     </header>
+
+      <div style="background-color:rgb(63, 81, 181)" class="mdl-layout__drawer">
+        <span style="color: white;" class="mdl-layout-title"><b>Getaway Bloom</b></span>
+        <nav class="mdl-navigation" id="navItems">
+          <a style="color: white;" class="mdl-navigation__link" href="index.html"><b>Home</b></a>
+          <a style="color: white;" class="mdl-navigation__link" href="Planned Vacation List.html"><b>Planned Vacations</b></a>
+        </nav>
+      </div>
+      <div class="mdl-grid" style="margin-top: -8px;">
+        <!-- Sedan -->
+        <div class="mdl-cell mdl-cell--6-col-desktop Sedan">
+            <label style="background-image: url('https://cdn.motor1.com/images/mgl/BqPXw/s1/2021-jaguar-f-pace-svr-lead.jpg');" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">  
+                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Sedan" checked>
+                <span class="mdl-radio__label">Sedan : 1000 km</span>
+            </label>
+        </div>
+
+        <!-- SUV -->
+        <div class="mdl-cell mdl-cell--6-col-desktop SUV">
+            <label style="background-image: url('https://cdn.motor1.com/images/mgl/BqPXw/s1/2021-jaguar-f-pace-svr-lead.jpg');" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">  
+                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="SUV" checked>
+                <span class="mdl-radio__label">SUV : 850 km</span>
+            </label>
+        </div>
+
+        <!-- Van -->
+        <div class="mdl-cell mdl-cell--6-col-desktop Van">
+            <label style="background-image: url('https://cdn.motor1.com/images/mgl/BqPXw/s1/2021-jaguar-f-pace-svr-lead.jpg');" class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">  
+                <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="Van" checked>
+                <span class="mdl-radio__label">Van : 600 km</span>
+            </label>
+        </div>
+
+        <!-- Mini-Bus -->
+        <div class="mdl-cell mdl-cell--6-col-desktop MiniBus">
+            <label style="background-image: url('https://cdn.motor1.com/images/mgl/BqPXw/s1/2021-jaguar-f-pace-svr-lead.jpg');"class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">  
+                <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="Minibus" checked>
+                <span class="mdl-radio__label">Minibus : 450 km</span>
+            </label> 
+        </div>
+	<br>
+
+        <div class="mdl-cell mdl-cell--12-col-desktop">																		 
+<!--             <button style="float: letft" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="back"onclick="back()">Back</button>
+ -->            <button style="float: right" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="next"onclick="next()">Confirm Vehicle</button>
+        </div>
+      </div>  
+    </div>
+	<script src="JS Files/Vehicle Selection.js"></script>
+</body>
+</html>

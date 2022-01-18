@@ -1,0 +1,30 @@
+.mdl-chip{
+    color: white;
+    background-color: rgb(63, 81, 181);
+}
+
+.mdl-chip:hover{
+    background-color: rgb(233, 30, 99);
+}
+
+.mdl-navigation__link:hover{
+    background-color: rgb(233, 30, 99);
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover{
+    background-color: rgb(233, 30, 99);
+}
+
+#map{
+	width: 100%;
+	height: 370px; 
+    margin-top: 5px;
+}
+
+#tripLength{
+  line-height: 2em;
+  text-align: center;
+  font-size: 18px;
+  background-color: #75CDF1;
+  color: white;
+ }

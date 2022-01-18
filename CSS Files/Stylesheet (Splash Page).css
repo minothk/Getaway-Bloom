@@ -1,0 +1,47 @@
+/* Identifies the home page's body and applies a gradient */
+#Splash{
+    background:linear-gradient(rgb(63, 81, 181),rgb(233, 30, 99));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    animation: myOpacity;
+	animation-duration: 2.5s;
+	animation-iteration-count: 1;
+}
+
+/* Opacity animation for the logo */
+@keyframes myOpacity{
+    0%{opacity:0;}
+    50%{opacity:0.5;}
+    100%{opacity:1;}
+}
+
+#logo{
+	margin-left:400px;
+	width: 30%;
+	float: left;
+	animation: myOpacity;
+	animation-duration: 2.5s;
+	animation-iteration-count: 1;
+}
+
+/* Changing the button's look */
+#getStarted{
+    background-color: rgb(63, 81, 181);
+    color: black;
+    animation: myOpacity;
+	animation-duration: 2.5s;
+	animation-iteration-count: 1;
+}
+
+#getStarted:hover{
+    color:white;
+    background-color: rgb(49, 63, 143);
+}
+
+#welcome{
+    animation: myOpacity;
+	animation-duration: 2.5s;
+	animation-iteration-count: 1;
+}
